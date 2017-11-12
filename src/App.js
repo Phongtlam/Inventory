@@ -73,6 +73,17 @@ class App extends Component {
     })
   }
 
+  toQuickBooks = () => {
+    console.log('toQuickBooks', this.state.infoRow)
+    axios("https://inventory-ba-backend.herokuapp.com/v1/application/processReceipt", {
+      method: 'POST',
+      mode: "cors",
+      data: {
+        "content": this.state.infoRow,
+      }
+    })
+  }
+
   imageChange = (e) => {
     e.preventDefault();
     let reader = new FileReader();
@@ -262,21 +273,24 @@ class App extends Component {
               imageChange={this.imageChange}
             />
           </div>
-          {this.state.isSpinner ? (
-            <div style={{
-              position: "relative",
-              left: "-70px",
-            }}>
-              <Spinner />
-            </div>
-          ) : (
-            <div className="info-row">
-              <InfoRow
-                {...this.state}
-                callEditReceiptModal={this.callEditReceiptModal}
-              />
-            </div>
-          )}
+          <div>
+            <button onClick={this.toQuickBooks} className="btn button-header">QuickBooks<i className="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+            {this.state.isSpinner ? (
+              <div style={{
+                position: "relative",
+                left: "-70px",
+              }}>
+                <Spinner />
+              </div>
+            ) : (
+              <div className="info-row">
+                <InfoRow
+                  {...this.state}
+                  callEditReceiptModal={this.callEditReceiptModal}
+                />
+              </div>
+            )}
+          </div>
           <div className="graphs">
             <div className={pieGraphClass}>
               <PieGraph {...this.state} />
