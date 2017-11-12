@@ -47,3 +47,10 @@
   float: left;
   width: 10px;
 }
+
+.mic {
+  padding-right: 30px;
+  width: 35px;
+  padding: inherit;
+  margin-right: -70px;
+}

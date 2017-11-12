@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './style/App.css';
 import axios from 'axios';
+import annyang from 'annyang';
 import Upload from './Upload';
 import InfoRow from './InfoRow';
 import Header from './Header';
@@ -30,6 +31,7 @@ class App extends Component {
       isBar: false,
       isEditReceiptModal: false,
       isSpinner: false,
+      isVoice: false,
     }
   }
 
@@ -216,6 +218,22 @@ class App extends Component {
     })
   }
 
+  startVoice = () => {
+    this.setState({ isVoice: true });
+    const commands = {
+      'change graph': this.switchGraphs,
+      'turn off voice': this.endVoice,
+    };
+    annyang.addCommands(commands);
+    annyang.debug();
+    annyang.start();
+  }
+
+  endVoice = () => {
+    this.setState({ isVoice: false });
+    if (annyang) annyang.abort();
+  }
+
   render() {
     let barGraphClass = (this.state.isBar) ? "bar-graph-show" : "bar-graph-hide";
     let pieGraphClass = (!this.state.isBar) ? "pie-graph-show" : "pie-graph-hide";
@@ -225,6 +243,8 @@ class App extends Component {
         <header className="App-header">
           <Header
             {...this.state}
+            startVoice={this.startVoice}
+            endVoice={this.endVoice}
             switchGraphs={this.switchGraphs}
             callMergeModal={this.callMergeModal}
             editCatName={this.editCatName}
@@ -236,7 +256,7 @@ class App extends Component {
           />
         </header>
         <div className="App-container">
-          <div style={{ "paddingLeft": "60px" }}>
+          <div style={{ "paddingLeft": "103px" }}>
             <Upload {...this.state}
               processImage={this.processImage}
               imageChange={this.imageChange}

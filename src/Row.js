@@ -9,7 +9,7 @@ const Row = (props) => {
         role="button"
         onClick={() => props.callEditReceiptModal(oneRow, i)}
         style={{ float: "right" }}
-      ><i className="fa fa-pencil" aria-hidden="true"/>
+      ><i className="fa fa-pencil" style={{ color: "#6772e5" }} aria-hidden="true"/>
       </a>
     </div>
   )

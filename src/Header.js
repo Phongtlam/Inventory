@@ -22,6 +22,11 @@ class Header extends React.Component {
     }
     return (
       <div className="header">
+        {this.props.isVoice ? (
+          <button onClick={this.props.endVoice} className="btn mic header-button"><i className="fa fa-microphone-slash" aria-hidden="true"></i></button>
+        ) : (
+          <button onClick={this.props.startVoice} className="btn mic header-button"><i className="fa fa-microphone" aria-hidden="true"></i></button>
+        )}
         <button className="btn header-button file-container"><i className="fa fa-cloud-upload" aria-hidden="true"></i>
           Upload Receipt
           <input
