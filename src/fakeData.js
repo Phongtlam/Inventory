@@ -1,32 +1,39 @@
 let fakeData = [
   {
-    id: 'fruit',
+    id: 'fruits',
     x: false,
     checkMark: false,
-    label: 'fruit',
+    label: 'fruits',
     items: [1,2,3,4,5],
-    total: 100.00,
+    total: 1.00,
   },{
-    id: 'protein',
+    id: 'meat',
     x: false,
     checkMark: false,
-    label: 'protein',
+    label: 'meat',
     items: [5,6,7,8,9],
-    total: 50.00,
+    total: 2.00,
   }, {
     id: 'vegetables',
     x: false,
     checkMark: false,
     label: 'vegetables',
     items: [],
-    total: 64.00,
+    total: 3.00,
   }, {
     id: 'misc',
     x: false,
     checkMark: false,
     label: 'misc',
     items: [],
-    total: 150.00,
+    total: 4.00,
+  }, {
+    id: 'dairy',
+    x: false,
+    checkMark: false,
+    label: 'dairy',
+    items: [],
+    total: 4.00,
   }
 ]
 
