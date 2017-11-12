@@ -103,5 +103,19 @@ html {
   height: 500px;
   overflow: scroll;
   position: relative;
-  left: -50px;
+  left: -43px;
+  width: 400px;
+}
+
+.to-quickbooks {
+  padding-right: 20px;
+}
+
+.button-to-quickbooks {
+  color: white;
+  background: #2CA028;
+  position: relative;
+  left: -55px;
+  margin: 10px;
+  margin-bottom: 30px;
 }

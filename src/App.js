@@ -234,6 +234,7 @@ class App extends Component {
     const commands = {
       'change graph': this.switchGraphs,
       'turn off voice': this.endVoice,
+      'change crap' : this.switchGraphs,
     };
     annyang.addCommands(commands);
     annyang.debug();
@@ -274,7 +275,6 @@ class App extends Component {
             />
           </div>
           <div>
-            <button onClick={this.toQuickBooks} className="btn button-header">QuickBooks<i className="fa fa-paper-plane-o" aria-hidden="true"></i></button>
             {this.state.isSpinner ? (
               <div style={{
                 position: "relative",
@@ -283,11 +283,14 @@ class App extends Component {
                 <Spinner />
               </div>
             ) : (
-              <div className="info-row">
-                <InfoRow
-                  {...this.state}
-                  callEditReceiptModal={this.callEditReceiptModal}
-                />
+              <div>
+                <button onClick={this.toQuickBooks} className="btn button-to-quickbooks">QuickBooks<i className="fa fa-paper-plane-o to-quickbooks" aria-hidden="true"></i></button>
+                <div className="info-row">
+                  <InfoRow
+                    {...this.state}
+                    callEditReceiptModal={this.callEditReceiptModal}
+                  />
+                </div>
               </div>
             )}
           </div>
