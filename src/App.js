@@ -274,50 +274,42 @@ class App extends Component {
       // if (!isNaN(temp[temp.length-1]) || !isNaN(temp[temp.length-2]) {
       //   itemPrice[] = !isNaN(temp[temp.length-1]) ? temp[temp.length-1] : temp[temp.length-2]
       // }
-      console.log('temp', temp)
       let isNum;
       for (let j=0; j<words.length; j++) {
         for (let k=0; k<words[j].length; k++) {
           let index = temp.indexOf(words[j][k]);
-          console.log('index and j ****', index, j)
           if (index !== -1) {
             if (j === 0) {
               isNum = !isNaN(temp[temp.length-1]) ? temp[temp.length-1] : 0// need number hereeeee!
-              console.log('isNum at FRUITSSS', isNum)
               if (!isNaN(isNum)) {
                 hash.fruits += parseInt(isNum);
               }
             } else if (j === 1) {
               isNum = !isNaN(temp[temp.length-1]) ? temp[temp.length-1] : 0
-              console.log('is Num', isNum)
 
               if (!isNaN(isNum)) {
                 hash.vegetables += parseInt(isNum);
               }
             } else if (j === 2) {
               isNum = !isNaN(temp[temp.length-1]) ? temp[temp.length-1] : 0
-              console.log('isNum', isNum)
 
               if (!isNaN(isNum)) {
                 hash.meat += parseInt(isNum);
               }
             } else if (j === 3) {
               isNum = !isNaN(temp[temp.length-1]) ? temp[temp.length-1] : 0
-              console.log('isNum', isNum)
 
               if (!isNaN(isNum)) {
                 hash.dairy += parseInt(isNum);
               }
             } else if (j === 4) {
               isNum = !isNaN(temp[temp.length-1]) ? temp[temp.length-1] : 0
-              console.log('isNum', isNum)
 
               if (!isNaN(isNum)) {
                 hash.fish += parseInt(isNum);
               }
             } else {
               isNum = !isNaN(temp[temp.length-1]) ? temp[temp.length-1] : 0
-              console.log('isNum',isNum)
 
               if (!isNaN(isNum)) {
                 hash.misc += parseInt(isNum);
@@ -327,14 +319,12 @@ class App extends Component {
         }
       }
     }
-    console.log('new hash table', hash);
     categories = categories.map((oneCat) => {
       return {
         ...oneCat,
         total: hash[oneCat.label],
       }
     })
-    console.log('new cat', categories)
     this.setState({ categories });
   }
 
