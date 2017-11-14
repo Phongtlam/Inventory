@@ -333,7 +333,7 @@ class App extends Component {
     let pieGraphClass = (!this.state.isBar) ? "pie-graph-show" : "pie-graph-hide";
     return (
       <div className="App">
-        <span className="site-name"><strong>INVENTORY - BA</strong></span>
+        <span className="site-name"><strong>RE-READER</strong></span>
         <header className="App-header">
           <Header
             {...this.state}
