@@ -1,6 +1,10 @@
 ## INVENTORY
 
-This is a project built during a hackathon at Intuit SmallBizHack.<br>
+This is a project built during a hackathon at Intuit SmallBizHack. This web application will take in receipts (at the moment only Costco) and intelligently identify items by categories. The graphs (bar and pie graphs) will update dynamically to reflect the changes.
+
+The mock receipts are inside receipts_data folder for demo purpose.
+<br>
+
 The live version of this app is available here. [https://inventory-ba.herokuapp.com/](https://inventory-ba.herokuapp.com/).
 
 ![screenshot](./screenshot.png)
